@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\Sortable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,10 +26,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class State extends Model
 {
-    use HasFactory;
+    use HasFactory, Sortable;
 
     protected $fillable = [
         'name',
-        'order',
     ];
 }
