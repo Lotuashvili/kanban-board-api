@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BoardController;
 use App\Http\Controllers\StatesController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\UsersController;
@@ -23,3 +24,5 @@ Route::apiResources([
     'users' => UsersController::class,
     'tasks' => TasksController::class,
 ]);
+
+Route::get('board', BoardController::class)->name('board.index');

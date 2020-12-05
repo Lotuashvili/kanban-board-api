@@ -12,6 +12,10 @@ Run `composer install` and then `php artisan migrate --seed`.
 
 ## Endpoints
 
+### Board
+
+States with tasks and users: GET `/board`
+
 ### Tasks
 
 List: GET `/tasks`

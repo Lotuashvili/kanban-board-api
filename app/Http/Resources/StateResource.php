@@ -15,10 +15,11 @@ class StateResource extends JsonResource
      */
     public function toArray($request)
     {
-        return $this->only([
-            'id',
-            'name',
-            'order',
-        ]);
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'order' => $this->order,
+            'tasks' => TaskResource::collection($this->whenLoaded('tasks')),
+        ];
     }
 }
