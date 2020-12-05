@@ -30,7 +30,7 @@ Delete: DELETE `/tasks/{id}`
 
 Reorder: POST `/tasks/reorder/{id}`
 
-**Note:** Reordering a task will automatically increase orders of other elements. [View Source](app/Http/Traits/SortableResourceTrait.php#L31)
+**Note:** Reordering a task will automatically increase orders of other elements. [View Source](app/Http/Traits/SortableResourceTrait.php#L44)
 
 #### Task Priorities
 
