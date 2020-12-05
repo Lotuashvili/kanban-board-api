@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StatesController;
+use App\Http\Controllers\TasksController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,5 @@ Route::get('/', fn() => response('Kanban Board API'));
 Route::apiResources([
     'states' => StatesController::class,
     'users' => UsersController::class,
+    'tasks' => TasksController::class,
 ]);

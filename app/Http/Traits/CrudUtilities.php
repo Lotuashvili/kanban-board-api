@@ -22,7 +22,10 @@ trait CrudUtilities
         $model = $this->fetchOrNewModel($id);
         $data = $request->validate($this->rules($model, $creating = empty($id)));
 
-        return $this->decorate($creating ? $this->model()::create($data) : tap($model)->update($data));
+        return $this->decorate(
+            ($creating ? $this->model()::create($data) : tap($model)->update($data))
+                ->loadMissing($this->config('relations', []))
+        );
     }
 
     /**
@@ -51,7 +54,7 @@ trait CrudUtilities
      */
     protected function fetchModel(int $id): Model
     {
-        return $this->model()::findOrFail($id);
+        return $this->model()::with($this->config('relations', []))->findOrFail($id);
     }
 
     /**
@@ -77,7 +80,7 @@ trait CrudUtilities
      */
     protected function all(): Collection
     {
-        return $this->model()::query()
+        return $this->model()::with($this->config('relations', []))
             ->when($this->config('sortable'), fn(Builder $query) => $query->oldest('order'))
             ->latest()
             ->latest('id')

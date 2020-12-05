@@ -12,18 +12,27 @@ Run `composer install` and then `php artisan migrate --seed`.
 
 ## Endpoints
 
-### Users
+### Tasks
 
-List: GET `/users`
+List: GET `/tasks`
 
-Create: POST `/users`
+Create: POST `/tasks`
 
-Single: GET `/users/{id}`
+Single: GET `/tasks/{id}`
 
-Update: PATCH `/users/{id}`
+Update: PATCH `/tasks/{id}`
 
-Delete: DELETE `/users/{id}`
+Delete: DELETE `/tasks/{id}`
 
+#### Task Priorities
+
+Priorities are marked by integer and are compared to zero. [View Source](app/Models/Task.php#L72)
+
+Low: `-1`
+
+Medium: `0`
+
+High: `1`
 
 ### States
 
@@ -36,3 +45,15 @@ Single: GET `/states/{id}`
 Update: PATCH `/states/{id}`
 
 Delete: DELETE `/states/{id}`
+
+### Users
+
+List: GET `/users`
+
+Create: POST `/users`
+
+Single: GET `/users/{id}`
+
+Update: PATCH `/users/{id}`
+
+Delete: DELETE `/users/{id}`
