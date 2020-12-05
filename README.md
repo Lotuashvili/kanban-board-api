@@ -28,6 +28,10 @@ Update: PATCH `/tasks/{id}`
 
 Delete: DELETE `/tasks/{id}`
 
+Reorder: POST `/tasks/reorder/{id}`
+
+**Note:** Reordering a task will automatically increase orders of other elements. [View Source](app/Http/Traits/SortableResourceTrait.php#L31)
+
 #### Task Priorities
 
 Priorities are marked by integer and are compared to zero. [View Source](app/Models/Task.php#L72)
@@ -49,6 +53,10 @@ Single: GET `/states/{id}`
 Update: PATCH `/states/{id}`
 
 Delete: DELETE `/states/{id}`
+
+Reorder: POST `/tasks/reorder/{id}`
+
+**Note:** Reordering a state will automatically increase orders of other elements. [View Source](app/Http/Traits/SortableResourceTrait.php#L44)
 
 ### Users
 

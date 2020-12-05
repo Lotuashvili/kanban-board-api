@@ -3,6 +3,7 @@
 namespace App\Http\Traits;
 
 use Exception;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -79,7 +80,9 @@ trait CrudUtilities
      */
     protected function all(): Collection
     {
-        return $this->model()::with($this->config('relations', []))
+        return $this->model()::withoutGlobalScopes()
+            ->when($this->config('sortable'), fn(Builder $query) => $query->oldest('order'))
+            ->with($this->config('relations', []))
             ->latest()
             ->latest('id')
             ->get();

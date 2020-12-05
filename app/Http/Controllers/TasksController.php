@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\TaskResource;
 use App\Http\Traits\CrudResourceTrait;
+use App\Http\Traits\SortableResourceTrait;
 use App\Models\Task;
 
 class TasksController extends Controller
 {
-    use CrudResourceTrait;
+    use CrudResourceTrait, SortableResourceTrait;
 
     protected array $config = [
         'model' => Task::class,
         'resource' => TaskResource::class,
+        'sortable' => true,
         'relations' => [
             'user',
             'state',
