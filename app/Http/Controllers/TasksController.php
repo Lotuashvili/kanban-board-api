@@ -13,7 +13,6 @@ class TasksController extends Controller
     protected array $config = [
         'model' => Task::class,
         'resource' => TaskResource::class,
-        'sortable' => true,
         'relations' => [
             'user',
             'state',

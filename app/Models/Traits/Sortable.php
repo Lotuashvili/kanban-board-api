@@ -2,6 +2,8 @@
 
 namespace App\Models\Traits;
 
+use Illuminate\Database\Eloquent\Builder;
+
 trait Sortable
 {
     /**
@@ -22,6 +24,8 @@ trait Sortable
                 $model->updateOrder();
             }
         });
+
+        static::addGlobalScope(fn(Builder $query) => $query->oldest('order'));
     }
 
     /**

@@ -13,7 +13,6 @@ class StatesController extends Controller
     protected array $config = [
         'model' => State::class,
         'resource' => StateResource::class,
-        'sortable' => true,
         'rules' => [
             'name' => 'required|min:3',
         ],
