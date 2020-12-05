@@ -28,6 +28,8 @@ Update: PATCH `/tasks/{id}`
 
 Delete: DELETE `/tasks/{id}`
 
+Change State: `/tasks/state/{id}`
+
 Reorder: POST `/tasks/reorder/{id}`
 
 **Note:** Reordering a task will automatically increase orders of other elements. [View Source](app/Http/Traits/SortableResourceTrait.php#L44)

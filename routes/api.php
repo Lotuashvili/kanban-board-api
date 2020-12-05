@@ -29,6 +29,7 @@ Route::apiResources([
 
 Route::prefix('tasks')->name('tasks.')->group(function () {
     Route::post('reorder/{id}', [TasksController::class, 'reorder'])->name('reorder');
+    Route::post('state/{id}', [TasksController::class, 'updateState'])->name('state');
 });
 
 Route::prefix('states')->name('states.')->group(function () {
