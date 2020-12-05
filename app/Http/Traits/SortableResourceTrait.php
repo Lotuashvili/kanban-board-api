@@ -38,10 +38,10 @@ trait SortableResourceTrait
 
         // Check if item with current order exists
         // If not, then there's no point incrementing other items' orders
-        if ($baseQuery->where('order', $order)->exists()) {
+        if ((clone $baseQuery)->where('order', $order)->exists()) {
             // Increment other models' orders
             // Doing SQL way to avoid extra operations by PHP in case of many records
-            $baseQuery->where('order', '>=', $order)
+            (clone $baseQuery)->where('order', '>=', $order)
                 ->update([
                     'order' => DB::raw('`order` + 1'),
                 ]);
