@@ -8,7 +8,7 @@ Run `composer install` and then `php artisan migrate --seed`.
 
 ## Endpoints
 
-**Users**
+### Users
 
 List: GET `/users`
 
@@ -21,7 +21,7 @@ Update: PATCH `/users/{id}`
 Delete: DELETE `/users/{id}`
 
 
-**States**
+### States
 
 List: GET `/states`
 
