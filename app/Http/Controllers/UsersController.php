@@ -10,6 +10,6 @@ class UsersController extends Controller
     public function index()
     {
         // Not using pagination for now
-        return UserResource::collection(User::latest()->get());
+        return UserResource::collection(User::latest()->latest('id')->get());
     }
 }
