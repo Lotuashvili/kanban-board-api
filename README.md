@@ -1,5 +1,9 @@
 # Kanban Board API
 
+Simple Kanban Board API written on Laravel
+
+[View Technical Task](task.md)
+
 ## Installation
 
 Copy `.env.example` to `.env` file and fill database credentials.
