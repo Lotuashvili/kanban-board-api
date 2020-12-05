@@ -12,6 +12,15 @@ Run `composer install` and then `php artisan migrate --seed`.
 
 List: GET `/users`
 
+Create: POST `/users`
+
+Single: GET `/users/{id}`
+
+Update: PATCH `/users/{id}`
+
+Delete: DELETE `/users/{id}`
+
+
 **States**
 
 List: GET `/states`

@@ -80,6 +80,7 @@ trait CrudUtilities
         return $this->model()::query()
             ->when($this->config('sortable'), fn(Builder $query) => $query->oldest('order'))
             ->latest()
+            ->latest('id')
             ->get();
     }
 

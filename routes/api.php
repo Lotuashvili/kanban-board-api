@@ -17,8 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn() => response('Kanban Board API'));
 
-Route::prefix('users')->name('users.')->group(function () {
-    Route::get(null, [UsersController::class, 'index'])->name('index');
-});
-
-Route::apiResource('states', StatesController::class);
+Route::apiResources([
+    'states' => StatesController::class,
+    'users' => UsersController::class,
+]);
