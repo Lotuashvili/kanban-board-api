@@ -71,3 +71,7 @@ Single: GET `/users/{id}`
 Update: PATCH `/users/{id}`
 
 Delete: DELETE `/users/{id}`
+
+## Testing
+
+Run `php artisan test` for tests.
