@@ -9,11 +9,6 @@ use Tests\TestCase;
 
 class TasksTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
     public function testCreateTask()
     {
         $data = $this->taskData();
