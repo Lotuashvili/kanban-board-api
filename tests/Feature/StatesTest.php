@@ -13,7 +13,7 @@ class StatesTest extends TestCase
             'name' => $this->faker->name,
         ];
 
-        $this->postJson('states', $data)->assertStatus(201);
+        $this->postJson('states', $data)->assertCreated();
 
         $this->assertDatabaseHas('states', $data);
     }

@@ -13,7 +13,7 @@ class TasksTest extends TestCase
     {
         $data = $this->taskData();
 
-        $this->postJson('tasks', $data)->assertStatus(201);
+        $this->postJson('tasks', $data)->assertCreated();
         $this->assertDatabaseHas('tasks', $data);
     }
 

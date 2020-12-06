@@ -13,7 +13,7 @@ class UsersTest extends TestCase
             'email' => $this->faker->safeEmail,
         ];
 
-        $this->postJson('users', $data)->assertStatus(201);
+        $this->postJson('users', $data)->assertCreated();
         $this->assertDatabaseHas('users', $data);
     }
 
