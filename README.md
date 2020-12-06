@@ -12,6 +12,8 @@ Run `composer install` and then `php artisan migrate --seed`.
 
 ## Endpoints
 
+This repository includes Postman's json file. Export this file, then set correct `url` variable (without training slash) in your environment and you can start testing.
+
 ### Board
 
 States with tasks and users: GET `/board`
